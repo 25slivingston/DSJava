@@ -4,11 +4,11 @@ public class pt2Final03and04Test {
 
 Scanner input = new Scanner(System.in);
 
-        System.out.print("type a number:" );
+        System.out.print("type a number: " );
         int numberOne = input.nextInt();
-        System.out.print("type a number:" );
+        System.out.print("type a number: " );
         int numberTwo = input.nextInt();
-        System.out.print("type a number:" );
+        System.out.print("type a number: " );
         int numberThree = input.nextInt();
 
         if ( numberOne < numberTwo && numberTwo < numberThree){
