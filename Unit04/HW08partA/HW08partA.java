@@ -41,7 +41,7 @@ public class HW08partA {
 
         //Print a table that shows the year, interest amount, and balance on each row
         for (int i = 1; i <= 5; i++) {
-            double balance = (initialBalance)
+            double balance = initialBalance;
             System.out.println(balance);
 
         }

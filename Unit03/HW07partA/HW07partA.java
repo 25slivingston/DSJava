@@ -4,7 +4,14 @@ public class HW07partA {
         System.out.println("Hello, World!");
 
 
-        //Cougar Cafe problem
+        /*Tue - Sun:
+If age < 13, discount = 5%
+If age >= 50, discount = 7.5%
+Mon:
+If age < 13, discount = 7.5%
+If age >= 50,discount = 15%
+For everyone else, discount = 5%
+ */
 
         Scanner input = new Scanner(System.in);
 
@@ -18,16 +25,33 @@ public class HW07partA {
         cost = input.nextFloat();
         System.out.print("What was the customer's age: ");
         age = input.nextInt();
+        double discount;
 
 
         if (dayofweek.toUpperCase().equals("MONDAY")) {
-             if (age < 13) {
-                totalcost = (cost / 100 * 7.5);
-            } else if (age >= 50) {
-                 totalcost = (cost - (cost / 100 * 15));
+            if (age < 13) {
+                discount = (cost / 100 * 7.5);
+            } 
+            else if (age >= 50) {
+                 discount = (cost / 100 * 15);
+            }
+            else {
+                discount = (cost / 100 * 5);
             }
             } 
+        else {
+            if (age < 13) {
+                discount = (cost / 100 * 5);
+            } 
+            else if (age >= 50) {
+                discount = (cost / 100 * 7.5);
+            }
+            else {
+                discount = 0;
+            }
+            }
 
+            totalcost = cost - discount;
             System.out.printf("$%.02f%n", totalcost);
 
 
