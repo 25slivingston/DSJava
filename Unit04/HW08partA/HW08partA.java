@@ -1,3 +1,4 @@
+import java.time.Year;
 import java.util.Scanner;
 public class HW08partA {
     public static void main(String[] args) throws Exception {
@@ -37,14 +38,28 @@ public class HW08partA {
 
 //Ask the user what the initial balance amount is in dollars
         System.out.print("what is the initial balance? ");
-        double initialBalance = input.nextDouble();
+        double balance = input.nextDouble();
+
+//set the year variable
+        int year = 1;
 
         //Print a table that shows the year, interest amount, and balance on each row
+        System.out.println("Year   |  Interest Earned  |   Balance");
+        System.out.println("------------------------------------");
+
+
         for (int i = 1; i <= 5; i++) {
-            double balance = initialBalance;
-            System.out.println(balance);
+            
+            double interestEarned = balance * interestRate /100;
+           // System.out.print(year+ "  |   " + interestEarned);
+            System.out.printf("%d      |   $%.2f", year, interestEarned);
+            balance = balance + interestEarned;
+            //System.out.println("   |  " + balance);
+            System.out.printf("          | $%,3.2f%n", balance);
+            year = year + 1;
 
         }
+        //System.out.printf("the total cost (15) is: $%.2f%n", discountCost2);
         
 
 
