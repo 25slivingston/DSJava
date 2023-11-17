@@ -9,17 +9,26 @@ public class HW09partA {
         double testscores = 0; 
 
         boolean loopFlag = true;
+
+        System.out.println("To get the average of your test scores, type them out or enter a negative number to quit.");
+
+        int number = 0;
+
         do {
-            System.out.print("enter in interger more than 0: ");
+            System.out.print("enter your test scores: ");
             testscores = in.nextDouble();
-            if (testscores > 0) { //this would eject us from the do and skip total = (total + money), so we don't add any negative values to our money total.
+            if (testscores >= 0) { //this would eject us from the do and skip total = (total + money), so we don't add any negative values to our money total.
                 total = (total + testscores);
+                number = number + 1;
             } else{
                     loopFlag = false;
                 }
             }
              while (loopFlag); //used to say money >= 0, but replacing it with the boolean is cleaner
-         System.out.println(total);
+
+        System.out.println("test scores submitted: " + number);
+         System.out.printf("%.2f", (total / number));
+         System.out.println("%");
 
 
 

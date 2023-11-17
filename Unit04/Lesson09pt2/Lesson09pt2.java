@@ -1,4 +1,4 @@
-import java.util.Scanner;
+/* import java.util.Scanner;
 class Die{
     int outcome = 1;
     public void setOutcome(int newVal){ // this is void because there is vo value returned
@@ -13,7 +13,7 @@ class Die{
         //this function rolls the die
         //create a random number
         double r = 6.0 * Math.random(); //0 to .99 to 0 to 6
-        int val =
+        int val = (int)r + 1;
     }
 }
 public class Lesson09pt2 {
@@ -104,4 +104,4 @@ public class Lesson09pt2 {
 
 
     }
-}
+} */
