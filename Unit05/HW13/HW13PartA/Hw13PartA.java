@@ -1,58 +1,47 @@
-
-
-package HW13PartA;
 import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.*;
 
-
-
 public class Hw13PartA {
-
-    
- {
-    /* public static Color flipColor(Color oldColor) {
-        Color color; // define a color variable
-        if (oldColor == Color.BLUE) {
-            color = Color.RED;
-        } else {
-            color = Color.BLUE;
-        }
-
-        return color;
-    } */
-
     /*
      * Change the following method to customize
      * what is drawn in the JFrame.
      */
-    public static void draw(Graphics g) { // modify this draw method, can use graphic methods on slideshow
+    public static void draw(Graphics g) {
         // by default, this method draws a blue square.
-        g.setColor(Color.yellow);
-        g.fillOval(0, 0, 100, 100); // change how big the rectangle is
-        g.setColor(Color.black);
+        g.setColor(Color.BLUE);
+        final int STEPS = 1000000000;
+        double delta = 2.0 * Math.PI / STEPS; //2pi/1000
 
-        final int SQUARE_WIDTH = 100;
-        Color c = (Color.BLUE);
-        for (int j = 0; j < 4; j++){
-        for (int i = 0; i < 4; i++){
-            
-            // set the color
-            g.setColor(c);
-            g.fillRect(i * SQUARE_WIDTH, j * SQUARE_WIDTH, SQUARE_WIDTH, SQUARE_WIDTH);
+        for (int i = 0; i < STEPS; i++) {
 
-            // flip the color
-        //    c = flipColor(c);
-            
+        //calc theta
+        double theta = i * delta;
+
+        //find radius
+        double r = Math.cos(2.0 * theta);
+        r = 150* r; //scale r u doofus
+
+        //convert to whatever
+        double x = r * Math.cos(theta);
+        double y = r * Math.sin(theta);
+
+        //convert the coords to intergers
+        int plotX = (int)x + 199; //gets the orgin to the center also
+        int plotY = (int)y + 199;
+
+        //plot x
+        g.fillRect(plotX, plotY, 1, 1); //plot a rectangle with 1 width and 1 height which is a DOT
+        }
+
+
+
         
-        }
-      //  c = flipColor(c);
-        }
+
     }
 
     public static enum OS {
         WIN, MAC, LINUX, OTHER
-
     }
 
     public static OS checkOS() {
@@ -76,7 +65,7 @@ public class Hw13PartA {
     public static void main(String[] args) {
         // this is the desired dimensions of the content area
         // of our JFrame window.
-        final int CONTENT_WIDTH = 400; // can change the size of the "canvas"
+        final int CONTENT_WIDTH = 400;
         final int CONTENT_HEIGHT = 400;
 
         // the values for border width and title bar height
@@ -100,4 +89,24 @@ public class Hw13PartA {
                 break;
         }
 
-        int frame_w
+        int frame_width = CONTENT_WIDTH + 2 * border_width;
+        int frame_height = CONTENT_HEIGHT + bar_height + border_width;
+        JFrame frame = new JFrame();
+        frame.setSize(frame_width, frame_height);
+        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+
+        JComponent component = new JComponent() {
+            public void paintComponent(Graphics graph) {
+                draw(graph);
+            }
+        };
+
+        frame.add(component);
+        frame.setVisible(true);
+
+        System.out.println("Frame Size   : " + frame.getSize());
+        System.out.println("Frame Insets : " + frame.getInsets());
+        System.out.println("Content Size : " + frame.getContentPane().getSize());
+    }
+
+}
