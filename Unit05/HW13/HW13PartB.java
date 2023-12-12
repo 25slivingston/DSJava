@@ -2,48 +2,49 @@ import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.*;
 
-public class HW13 {
+public class HW13PartB {
+    public static Color flipColor(Color oldColor) {
+        Color color; // define a color variable
+        if (oldColor == Color.BLUE) {
+            color = Color.RED;
+        } else {
+            color = Color.BLUE;
+        }
+
+        return color;
+    }
+
     /*
      * Change the following method to customize
      * what is drawn in the JFrame.
      */
-    public static void draw(Graphics g) { //modify this draw method, can use graphic methods on slideshow
+    public static void draw(Graphics g) { // modify this draw method, can use graphic methods on slideshow
         // by default, this method draws a blue square.
         g.setColor(Color.magenta);
         g.fillRect(0, 0, 100, 100); // change how big the rectangle is
         g.setColor(Color.black);
 
-        g.setColor(Color.BLUE);
         final int SQUARE_WIDTH = 100;
-        for(int i = 0; i < 4; i++) {
-            //draw the square
-           
-            //difine a constnt for the width
-           
-
-            g.drawRect(i* SQUARE_WIDTH, 0, SQUARE_WIDTH, SQUARE_WIDTH);
-        }
-
-
-            //flip the colour
-            Color c = Color.BLUE;
-            if (c == Color.BLUE) {
-                c = Color.RED;}
-            else {
-            c = Color.BLUE;
-        }
+        Color c = (Color.BLUE);
+        for (int j = 0; j < 4; j++){
+        for (int i = 0; i < 4; i++){
             
+            // set the color
+            g.setColor(c);
+            g.fillRect(i * SQUARE_WIDTH, j * SQUARE_WIDTH, SQUARE_WIDTH, SQUARE_WIDTH);
 
-        }
+            // flip the color
+            c = flipColor(c);
+            
         
-
-       
-
-
+        }
+        c = flipColor(c);
+        }
     }
 
     public static enum OS {
         WIN, MAC, LINUX, OTHER
+
     }
 
     public static OS checkOS() {
@@ -67,7 +68,7 @@ public class HW13 {
     public static void main(String[] args) {
         // this is the desired dimensions of the content area
         // of our JFrame window.
-        final int CONTENT_WIDTH = 400; //can change the size of the "canvas"
+        final int CONTENT_WIDTH = 400; // can change the size of the "canvas"
         final int CONTENT_HEIGHT = 400;
 
         // the values for border width and title bar height
