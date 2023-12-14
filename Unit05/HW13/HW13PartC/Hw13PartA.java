@@ -2,25 +2,41 @@ import java.awt.Color;
 import java.awt.Graphics;
 import javax.swing.*;
 
-public class HW13PartA {
+public class Hw13PartA {
     /*
      * Change the following method to customize
      * what is drawn in the JFrame.
      */
     public static void draw(Graphics g) {
-        // draw yellow circle with black rim
-        g.setColor(Color.YELLOW);
-        g.fillOval(0, 0, 400, 400);
-        g.setColor(Color.BLACK);
-        g.drawOval(0, 0, 400, 400);
+        // by default, this method draws a blue square.
+        g.setColor(Color.BLUE);
+        final int STEPS = 1000;
+        double delta = 2.0 * Math.PI / STEPS; //2pi/1000
 
-        //draw the beady eyes
-        g.fillOval(100, 100, 50, 50);
-        g.fillOval(250, 100, 50, 50);
+        for (int i = 0; i < STEPS; i++) {
 
-        //draw the line mouth
-        g. drawRect(50, 300, 300, 1);
+        //calc theta
+        double theta = i * delta;
 
+        //find radius
+        double r = Math.cos(2.0 * theta);
+        r = 150* r; //scale r u doofus
+
+        //convert to whatever
+        double x = r * Math.cos(theta);
+        double y = r * Math.sin(theta);
+
+        //convert the coords to intergers
+        int plotX = (int)x + 199; //gets the orgin to the center also
+        int plotY = (int)y + 199;
+
+        //plot x
+        g.fillRect(plotX, plotY, 1, 1); //plot a rectangle with 1 width and 1 height which is a DOT
+        }
+
+
+
+        
 
     }
 
