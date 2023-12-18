@@ -42,8 +42,8 @@ public class HW12PartC {
 
         Scanner input = new Scanner(System.in);
         System.out.print("enter a string: ");
-        String phrase = input.nextLine();
-        int numVowels = countVowels(phrase);
-        System.out.println(numVowels);
+        String phrase = input.nextLine(); //make the string phrase
+        int numVowels = countVowels(phrase); //use the countvowels method
+        System.out.println(numVowels); 
     }
 }
