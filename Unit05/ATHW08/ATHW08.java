@@ -41,7 +41,7 @@ public class ATHW08 {
 
         Die die = new Die();
         int answer = die.getFaceValue(); //have to put this into the print statement
-        System.out.println("the die value is equal to " + answer);
+        System.out.println("the die value is equal to " + answer); // the print statement in question
 
         //change the value of the die
         die.setFaceValue(6);
