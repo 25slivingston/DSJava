@@ -13,7 +13,7 @@ public class PartB {
         while (true) {
             if (input.hasNext("q") || input.hasNext("Q")) {
                 System.out.println("Done entering input.");
-                input.next();
+                input.next(); //this clears the input holder so the rest of the code can work
                 break;
             } else {
                 if (currentSize < numbers.length) {
