@@ -78,5 +78,13 @@ public class PartA {
         } else {
             System.out.println("um sure ig");
         }
+        //make the new array with the dropped grade
+        double[] numbersDroppedOne = new double[20];
+        for (i = 0; i < numbersDroppedOne.length; i++) {
+            if (i != dropit) {
+                numbersDroppedOne[i] = numbers[i];
+
+            }
+        }
     }
 }

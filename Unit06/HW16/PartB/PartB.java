@@ -16,7 +16,7 @@ Important Note: If you use a partially filled array to store your values,
 
  */
 
-  import java.util.Arrays;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class PartB {
