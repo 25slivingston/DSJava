@@ -24,7 +24,7 @@ class Board {
 
     // this method updated the cell with the character key
     // for row and col. it returns true if it was
-    // sucsessfil in updating the cell.
+    // sucsessful in updating the cell.
     public boolean updateBoard(int row, int col, char key) {
         // check limits
         if (row < 0 || row >= 3) {
@@ -43,6 +43,47 @@ class Board {
         }
 
     }
+
+    // figure out how to declare the winner
+    public boolean declareWinner() {
+        // check the rows
+        for (int i = 0; i < 3; i++) {
+            if (board[i][0] == 'x' && board[i][1] == 'x' && board[i][2] == 'x') {
+                System.out.println("player two wins");// these print statements get overwritten in the main code because
+                                                      // you clear the screen
+                return true;
+            } else if (board[0][i] == 'o' && board[1][i] == 'o' && board[2][i] == 'o') {
+                System.out.println("player one wins");
+                return true;
+            }
+        }
+
+        // check the columns
+        for (int i = 0; i < 3; i++) {
+            if (board[0][i] == 'x' && board[1][i] == 'x' && board[2][i] == 'x') {
+                System.out.println("player two wins");
+                return true;
+            } else if (board[i][0] == 'o' && board[i][1] == 'o' && board[i][2] == 'o') {
+                System.out.println("player one wins");
+                return true;
+            }
+        }
+        if (board[0][0] == 'x' && board[1][1] == 'x' && board[2][2] == 'x') {
+            System.out.println("player two wins");
+            return true;
+        } else if (board[0][2] == 'o' && board[1][1] == 'o' && board[2][0] == 'o') {
+            System.out.println("player one wins");
+            return true;
+        }
+        if (board[0][0] == 'o' && board[1][1] == 'o' && board[2][2] == 'o') {
+            System.out.println("player one wins");
+            return true;
+        } else if (board[0][2] == 'x' && board[1][1] == 'x' && board[2][0] == 'x') {
+            System.out.println("player two wins");
+            return true;
+        }
+        return false;
+    }
 }
 
 public class ProjectPartC {
@@ -59,10 +100,10 @@ public class ProjectPartC {
 
         // loop until quit, done, or winner.
         int row, col;
+        int currentPlayer = 1;
         while (true) {// clearscreen and display board
             clearScreen();
             board.printBoard();
-            int currentPlayer = 1;
 
             // print curent player number
             System.out.print("Player #" + currentPlayer + ": ");
@@ -80,8 +121,8 @@ public class ProjectPartC {
             // they don't want to quit, convert value to an interger
             row = Integer.valueOf(reply);
 
-            // ask the user for a row
-            System.out.print("Enter the row for your next move or 'q' to quit: ");
+            // ask the user for a col
+            System.out.print("Enter the col for your next move or 'q' to quit: ");
             reply = input.next();
 
             // do they want to quit
@@ -108,19 +149,17 @@ public class ProjectPartC {
                 input.next();
                 continue;
 
-            } else {
-                // toggle player.
-                if (currentPlayer == 1) {
-                    currentPlayer = 2;
-                } else {
-                    currentPlayer = 1;
-                }
             }
 
-           
-            
-
             // is there a winner?
+            if (board.declareWinner() == true) {
+                clearScreen();
+                board.printBoard();
+                System.out.println("the winner is " + currentPlayer);
+                break;
+
+            }
+
             // is the board filled?
             if (board.count == 9) {
                 clearScreen();
@@ -129,6 +168,12 @@ public class ProjectPartC {
                 break;
             }
 
+            // toggle player.
+            if (currentPlayer == 1) {
+                currentPlayer = 2;
+            } else {
+                currentPlayer = 1;
+            }
         }
         System.out.println("goodbye :<");
 

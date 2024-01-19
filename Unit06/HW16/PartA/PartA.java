@@ -11,7 +11,7 @@ Preserve the order of the remaining test scores as you drop the lowest score
 After dropping the lowest score, reprint the scores array 
  */
 
- import java.util.Arrays;
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class PartA {
@@ -80,7 +80,7 @@ public class PartA {
         }
         //make the new array with the dropped grade
         double[] numbersDroppedOne = new double[20];
-        for (i = 0; i < numbersDroppedOne.length; i++) {
+        for (int i = 0; i < numbersDroppedOne.length; i++) {
             if (i != dropit) {
                 numbersDroppedOne[i] = numbers[i];
 
