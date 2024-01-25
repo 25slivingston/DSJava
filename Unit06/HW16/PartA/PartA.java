@@ -56,35 +56,43 @@ public class PartA {
 
         System.out.print("the array in question: ");
 
+        double lowest = Double.MAX_VALUE;
+        int lowestindex =-1;
+
         for (int i = 0; i <= currentSize - 1; i++) {
             System.out.print(numbers[i]);
+            if (numbers[i] < lowest) {
+                lowest = numbers[i];
+                lowestindex = i;
+            }
             if (i >= 0) {
                 System.out.print(", ");
             } else {
                 System.out.println("");
             }
         }
-        
-
+    
 
         //ask the user if they want to drop the lowest value
         System.out.print("would you like to drop the lowest test score? ");
         String yOrN = input.next();
         if (yOrN.equals("y") || yOrN.equals("Y")) {
-             
-            System.out.println("write the index of the score you want to drop.");
-            int dropit = input.nextInt();
+          // they want to drop it.
+          for (int i = lowestindex; i < currentSize - 2; i++){// - 2 because the normal -1 won't compensate for the shift   
+          numbers[i]  = numbers[i+1];
+
+        
+        }
+        currentSize = currentSize - 1;
+        System.out.println("the modified array is: ");
+        for(int i = 0; i< numbers[i]; i++){
+            System.out.print(numbers[i] + ", ");
+
+        }
 
         } else {
             System.out.println("um sure ig");
         }
-        //make the new array with the dropped grade
-        double[] numbersDroppedOne = new double[20];
-        for (int i = 0; i < numbersDroppedOne.length; i++) {
-            if (i != dropit) {
-                numbersDroppedOne[i] = numbers[i];
-
-            }
-        }
+        
     }
 }
