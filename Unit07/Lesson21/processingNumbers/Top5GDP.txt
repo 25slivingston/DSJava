@@ -1,0 +1,4 @@
+China;24,861,000,000,000;1;East and Southeast Asia
+United States;21,132,000,000,000;2;North America
+India;9,279,000,000,000;3;South Asia
+Japan;5,126,000,000,000;4;East and Southeast Asia
