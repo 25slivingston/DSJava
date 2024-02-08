@@ -1,0 +1,5 @@
+Elon Musk; $210,200,000,000; United States
+Bernard Arnault; $208,500,000,000; France
+Jeff Bezos; $183,400,000,000; United States
+Larry Ellison; $141,600,000,000; United States
+Mark Zuckerberg; $141,500,000,000; United States

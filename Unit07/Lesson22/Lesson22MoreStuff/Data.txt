@@ -1,0 +1,4 @@
+Atkinson,Bob,30000.99
+MacFarlane,Craig,20000.50
+Gilbert,Elizabeth,n/a
+Wierman,Kim,25000.75
