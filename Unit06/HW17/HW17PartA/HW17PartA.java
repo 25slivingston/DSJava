@@ -1,14 +1,30 @@
+import java.util.Arrays;
+
 public class HW17PartA {
     public static void main(String[] args) throws Exception {
 
 
 
-    String[][] chart = {
+    /* int[][] chart = {
         {0, 0, 0},
         {0, 0, 0},
         {0, 0, 0},
         {0, 0, 0}
-    };
+    }; */
+
+    int[][] chart2 = new int[4][3];
+
+    System.out.print(Arrays.toString(chart2));
+    for (int i = 0; i < chart2.length; i++) {
+        for (int j = 0; j < chart[0].length; j++) {
+            
+            System.out.print(chart2[i][j]);
+            if (j < 2) {
+                System.out.print(", ");
+            }
+        }
+        System.out.println("");
+    }
 
     //295 java concepts book shows info u want this above is wrong
  
