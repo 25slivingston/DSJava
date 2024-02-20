@@ -16,7 +16,7 @@ public class HW17PartA {
 
     System.out.print(Arrays.toString(chart2));
     for (int i = 0; i < chart2.length; i++) {
-        for (int j = 0; j < chart[0].length; j++) {
+        for (int j = 0; j < chart2[0].length; j++) {
             
             System.out.print(chart2[i][j]);
             if (j < 2) {
