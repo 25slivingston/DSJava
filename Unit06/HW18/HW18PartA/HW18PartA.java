@@ -4,18 +4,18 @@ public class HW18PartA{
 
         ArrayList<String> names= new ArrayList<String>(); //create a new array list
         names.add("Emily");
-        System.out.println(names);
+       // System.out.println(names);
         names.add("James"); //call the add function
-        System.out.println(names);
+       // System.out.println(names);
         names.add("Lillianna");
-        System.out.println(names);
+       // System.out.println(names);
         names.add("Ashwini");
-        System.out.println(names);
+       // System.out.println(names);
         names.add("Erica");
-        System.out.println(names);
+       // System.out.println(names);
 
-        for(int i = 0; i < ArrayList.size(names); i++) {
-            System.out.println(names[i]);
+        for(int i = 0; i < names.size(); i++) {
+            System.out.println(names.get(i));
         }
 
         //names points to a place in memory where the array is stored

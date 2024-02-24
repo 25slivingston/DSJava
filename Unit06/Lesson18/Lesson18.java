@@ -18,7 +18,7 @@ public class Lesson18{
         //reference the google slideshow for a list of functions that the array list can use
 
         //can only operate on non-primitive data types, so int becomes Interger
-        ArrayList<Interger> values = new ArrayList<Interger> (); //wrapper class, basically the same as using an int.
+        ArrayList<Integer> values = new ArrayList<Integer> (); //wrapper class, basically the same as using an int.
         values.add(1);
         values.add(42);
         System.out.println(values);
