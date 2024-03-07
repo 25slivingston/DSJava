@@ -13,11 +13,11 @@ import java.util.ArrayList;
 import java.util.Scanner;
 
 class CashRegister {
-    private ArrayList<Double> items; //declate it
+    private ArrayList<Double> items; //declare it
 
-    /*
-     * Constructor.
-     */
+    
+     //Constructor.
+     
     public CashRegister() {
         items = new ArrayList<>(); //initialise it
         
@@ -82,29 +82,35 @@ public class HW25 {
         myRegister.addItem(4.50);
         System.out.println("This is the price" + myRegister.getTotal());
         System.out.println("this is the count: " + myRegister.getCount());
-    }
+        Scanner in = new Scanner(System.in);
+        myRegister.clear();
 
-    Scanner in = new Scanner(System.in);
+
+
 
     while(true){
-        String word = in.nextline();
-        System.out.println("Do you want to add a cost (_.__), quit (q), clear (c), delete last (d), or display (t)");
         
+        System.out.println("Do you want to add a cost (_.__), quit (q), clear (c), delete last (d), or display (t)");
+        String word = in.nextLine();
+
         if (word.equalsIgnoreCase("q")){ //ignore case treats lower and upper case as same
             System.out.println("goodbye");
             break;
         } else if(word.equalsIgnoreCase("t")){
-            System.out.println("total: " + myRegister.getTotal + myRegister.getCount);
+            System.out.println("total: " + myRegister.getTotal() +" Item count: "+ myRegister.getCount());
         } else if(word.equalsIgnoreCase("c")){
-            myRegister.clear;
+            myRegister.clear();
         } else if(word.equalsIgnoreCase("d")){
-            myRegister.removeItem;
+            myRegister.removeItem();
         }else{ 
             //assume its a number, and convert it.
             double amount = Double.parseDouble(word);
-            myRegister.addItem;
+            myRegister.addItem(amount);
         }
     }
+    }
+
+    
 }
 
 /*
