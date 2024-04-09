@@ -1,0 +1,35 @@
+
+//child of the bicycle class
+
+public class Bicycle {
+    private int speed; //
+    private final int MAX_SPEED = 30;
+
+    public int getSpeed() {
+        return speed;
+    }
+
+    public void setSpeed(int newSpeed) {
+        speed = newSpeed;
+    }
+
+    public void pedal() {
+        // increase the virtual speed of the bicycle.
+        speed = speed + 1;
+        if (speed > MAX_SPEED) {
+            speed = MAX_SPEED;
+        }
+    }
+
+    public void brake() {
+        speed = speed - 1;
+        if (speed < 0) {
+            speed = 0;
+        }
+    }
+
+    public void display() {
+        System.out.printf("Gear = %02d; ", curretGear);
+        super.display(); // call the parent class function (which is bicycle.java)
+    }
+}
