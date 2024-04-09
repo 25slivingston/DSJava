@@ -43,19 +43,26 @@ public class Yard {
         }
     }
 
-    public void printYard(Mower mower) { //if there is a mower
-        
+    public void printYard(Mower mower) { // if there is a mower
+
         for (int i = 0; i < yard.length; i++) {
             for (int j = 0; j < yard[0].length; j++) {
-                if (mower.getRow() == i && mower.getColumn() == j){
-                    //print the mower
-                    if()
+                if (mower.getRow() == i && mower.getColumn() == j) {
+                    // print the mower
+                    if (mower.getDirection() == 0) {
+                        System.out.print("^");
+                    } else if (mower.getDirection() == 1) {
+                        System.out.print(">");
+                    } else if (mower.getDirection() == 2) {
+                        System.out.print("⌄");
+                    } else if (mower.getDirection() == 3) {
+                        System.out.print("<");
+                    }
                 } else {
-                    //print the yard
+                    // print the yard
                     System.out.print(yard[i][j]);
                 }
 
-                
             }
             System.out.println();
         }
