@@ -1,7 +1,7 @@
 import mow.Yard; //looks under current folder for mow then yead
 import mow.Mower;
 
-public class ATLawn {
+public class ATLawnB {
     public static void clearScreen() {
         System.out.print("\033[H\033[2J");
         System.out.flush();

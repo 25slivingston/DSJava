@@ -18,7 +18,7 @@ public class ATLawnC {
     public static void main(String[] args) {
 
         // create a yard
-        Yard myYard = new Yard(6, 11);
+        Yard myYard = new Yard(5, 5);
         // creat a mower
         Mower myMower = new Mower();
         // do not use the following code, we will randomise the position enstead
