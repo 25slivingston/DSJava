@@ -107,4 +107,45 @@ public class Mower {
             yard.setValue(row, column, ' ');
         }
     }
+
+    public void randomise(Yard yard) {
+        // place the mower in one of the 4 corners of the lawn
+        // randomise its direction
+        // random number from 0 to 3
+        int randomNumber = (int) (Math.random() * 4);
+
+    }
+
+    public boolean updateMower(Yard yard) {
+        // check to see if there is any grass left in front
+        if (senseBrick(yard) == '+') {
+            // there is unmowed grass in front
+            moveForward();
+            return true;
+        } else {
+            // turn to the right
+            turnRight();
+            if (senseBrick(yard) == '+') {
+                // there is unmowed grass in front
+                moveForward();
+                return true;
+            } else {
+                turnLeft();
+                turnLeft();
+                if (senseBrick(yard) == '+') {
+                    moveForward();
+                    return true;
+                } else {
+                    // there is nothing left to cut
+                    return false;
+                }
+
+            }
+        }
+        // if so, move to the next avalable spot of grass return true
+        // else return false
+        // if not a +, turn the mower and sense to see if that one is a plus.
+        // if there are no grass to any side your mower is done.
+
+    }
 }
