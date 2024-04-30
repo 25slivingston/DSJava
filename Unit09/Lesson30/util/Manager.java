@@ -31,4 +31,9 @@ public class Manager extends Employee {
         super.displayInfo();
         System.out.printf("  Bonus  = $%,12.2f%n", bonus);
     }
+
+    public String toString() {
+        return super.toString() + "[bonus = " + bonus + "]";
+    }
+
 }
