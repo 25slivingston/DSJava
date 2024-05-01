@@ -4,8 +4,9 @@ public class GearedBicycle extends Bicycle {
     private int gear = 1; // gear that the bike is in
 
     public GearedBicycle() {
-        super(); //invoke the parents constructor! this is the same as calling Bicycle(); because bicycle is the parent
-    //this basically just sets the speed but lets ignore that lol
+        super(); // invoke the parents constructor! this is the same as calling Bicycle();
+                 // because bicycle is the parent
+        // this basically just sets the speed but lets ignore that lol
     }
 
     public int getGear() {
@@ -30,28 +31,28 @@ public class GearedBicycle extends Bicycle {
         }
     }
 
-    //OVERRIDE
+    // OVERRIDE
 
-    public void pedal(){
+    public void pedal() {
         int newSpeed = getSpeed() + getGear();
         if (newSpeed > MAX_SPEED_GEARED) {
             newSpeed = MAX_SPEED_GEARED;
         }
+        this.setSpeed(newSpeed);
     }
 
-    public void break(){
-        speed = speed - 1;
-        if (speed < 1) {
-            gear = 1;
+    public void brake() {
+        int newspeed = getSpeed() - 2;
+        if (newspeed < 0) {
+            newspeed = 0;
         }
+        this.setSpeed(newspeed);
     }
 
-    public void display(){
+    public void display() {
+        super.display(); // call the parent class function (which is bicycle.java)
+        System.out.printf("Gear = %02d%n", gear);
 
     }
-
-
-
-
 
 }

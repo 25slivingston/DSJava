@@ -29,7 +29,7 @@ public class Bicycle {
     }
 
     public void display() {
-        System.out.printf("Gear = %02d; ", curretGear);
-        super.display(); // call the parent class function (which is bicycle.java)
+        System.out.println("speed equals: " + getSpeed());
+
     }
 }
