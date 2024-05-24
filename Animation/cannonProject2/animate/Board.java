@@ -92,14 +92,19 @@ public class Board extends JPanel implements KeyListener {
         // throw new UnsupportedOperationException("Unimplemented method 'keyPressed'");
         if (e.getKeyCode() == KeyEvent.VK_LEFT) {
             System.out.println("left key presse");
+            cannon.rotateCounterClockWise();
+            this.repaint();
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
             System.out.println("right key pressed");
+            cannon.rotateClockWise();
+            this.repaint();
         } else if (e.getKeyCode() == KeyEvent.VK_UP) {
             System.out.println("up key pressed");
         } else if (e.getKeyCode() == KeyEvent.VK_DOWN) {
             System.out.println("down key pressed");
         } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
             System.out.println("space key lol");
+            cannon.fire();
         }
     }
 
