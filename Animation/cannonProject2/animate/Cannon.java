@@ -21,6 +21,8 @@ public class Cannon {
     public static final double PIVOT_OFFSET_X = 15;
     private SoundClip soundCannon = new SoundClip("media/cannon.wav");
     private SoundClip soundWheel = new SoundClip("media/wheel.wav");
+    private double HYPOTENUSE = 100;
+    private double INITIAL_VELOCITY = 27;
 
     public void rotateClockWise() {
         angle = angle - 5;
@@ -41,6 +43,16 @@ public class Cannon {
 
     public void fire() {
         soundCannon.play();
+    }
+
+    public void fire(CannonBall ball) {
+        this.fire(); // uses the method above to make the sound
+        double xBall = x + HYPOTENUSE * Math.cos(Math.toRadians(Math.abs(angle)));
+        double yBall = y - HYPOTENUSE * Math.sin(Math.toRadians(Math.abs(angle)));
+        double vxBall = INITIAL_VELOCITY * Math.cos(Math.toRadians(Math.abs(angle)));
+        double vyBall = -INITIAL_VELOCITY * Math.sin(Math.toRadians(Math.abs(angle)));
+
+        ball.launch(xBall, yBall, vxBall, vyBall);
     }
 
     public Cannon(double x, double y, double angle) {

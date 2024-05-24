@@ -28,16 +28,19 @@ public class Board extends JPanel implements KeyListener {
 
     private Timer timer;
     private final int INITIAL_DELAY = 100; // msec
-    private final int PERIOD_INTERVAL = 25; // msec
+    private final int PERIOD_INTERVAL = 20; // msec
 
     Cannon cannon = new Cannon(60, FLOOR - 30, 45); // this sets x and y and the angle
+    CannonBall ball = new CannonBall(0, +1, FLOOR);
 
     private class UpdateAnimation extends TimerTask {
         /*
          * Override the run() method.
          * Update the position of our ball here.
          */
-        public void run() {
+        public void run() { // ball is the only dymamically moving thingy
+            ball.updateBall();
+            repaint();
 
         }
     }
@@ -77,6 +80,7 @@ public class Board extends JPanel implements KeyListener {
         g2d.drawLine(0, FLOOR, B_WIDTH, FLOOR);
 
         cannon.draw(g2d);
+        ball.draw(g2d);
 
     }
 
@@ -104,7 +108,7 @@ public class Board extends JPanel implements KeyListener {
             System.out.println("down key pressed");
         } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
             System.out.println("space key lol");
-            cannon.fire();
+            cannon.fire(ball);
         }
     }
 
