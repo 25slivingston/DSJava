@@ -2,7 +2,7 @@ package animals;
 
 import java.util.ArrayList;
 
-public class Animal implements Comparable {
+public class Animal implements Comparable<Animal> {
     private String name;
     private double weight;
 
@@ -46,6 +46,6 @@ public class Animal implements Comparable {
 
     @Override
     public int compareTo(Animal other) {
-        return Integer.compare(this.year_discovered, other.year_discovered);
+        return Double.compare(this.weight, other.weight);
     }
 }
